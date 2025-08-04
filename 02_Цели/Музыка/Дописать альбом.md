@@ -1,0 +1,42 @@
+---
+tags:
+  - Проект
+---
+
+```dataview
+  TABLE without id
+  dateformat(this.file.ctime, "dd.MM.yyyy HH:mm") as Создано,
+  dateformat(this.file.mtime, "dd.MM.yyyy HH:mm") as "Последнее изменение" 
+  WHERE file.name = this.file.name
+```
+  
+
+```dataview 
+TABLE without id
+unique(file.outlinks) AS "Исходящие ссылки", 
+file.inlinks AS "Входящие ссылки"
+WHERE file.name = this.file.name
+```
+
+# Задачи
+> [!todo] Активные
+> ```dataview
+>  TASK
+>  FROM [[]]
+>  WHERE !completed
+>  SORT file.ctime desc
+> ```
+
+> [!todo] Готовые
+> ```dataview
+>   TASK
+>   FROM [[]]
+>   WHERE completed
+>   SORT file.ctime desc
+>   LIMIT 30
+> ```
+
+# Ссылки
+
+
+# Описание
