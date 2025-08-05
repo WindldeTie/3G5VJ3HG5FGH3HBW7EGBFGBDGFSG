@@ -1,7 +1,6 @@
 ---
 tags:
-  - Задача
-Статусы: 2025-08-01T10:20:00
+  - Проект
 ---
 
 ```dataview
@@ -10,7 +9,7 @@ tags:
   dateformat(this.file.mtime, "dd.MM.yyyy HH:mm") as "Последнее изменение" 
   WHERE file.name = this.file.name
 ```
-
+  
 
 ```dataview 
 TABLE without id
@@ -18,10 +17,26 @@ unique(file.outlinks) AS "Исходящие ссылки",
 file.inlinks AS "Входящие ссылки"
 WHERE file.name = this.file.name
 ```
+
+# Задачи
+> [!todo] Активные
+> ```dataview
+>  TASK
+>  FROM [[]]
+>  WHERE !completed
+>  SORT file.ctime desc
+> ```
+
+> [!todo] Готовые
+> ```dataview
+>   TASK
+>   FROM [[]]
+>   WHERE completed
+>   SORT file.ctime desc
+>   LIMIT 30
+> ```
+
 # Ссылки
-[[Apple Календарь]]
+
+
 # Описание
-- [x] Определение рабочих часов
-- [x] Внесение крупных блоков
-- [x] Добавление регулярных событий
-- [x] Кастомизация и настройка
